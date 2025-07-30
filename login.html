@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Risk Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="login-body">
+    <div class="login-container">
+        <!-- Slaytlar Konteyneri -->
+        <div class="slides-container">
+            <!-- Slayt 1: Risk Ready -->
+            <div class="slide active" id="slide-1">
+                <div class="slide-content">
+                    <h1 class="slide-title">Risk Ready</h1>
+                    
+                    <div class="slide-illustration">
+                        <div class="shield-container">
+                            <div class="shield">
+                                <div class="shield-rings">
+                                    <div class="ring outer"></div>
+                                    <div class="ring middle"></div>
+                                    <div class="ring inner"></div>
+                                </div>
+                                <div class="shield-center"></div>
+                            </div>
+                            <div class="sword">
+                                <div class="sword-blade"></div>
+                                <div class="sword-hilt"></div>
+                            </div>
+                            <div class="coins">
+                                <div class="coin"></div>
+                                <div class="coin"></div>
+                                <div class="coin"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p class="slide-description">Boldly risk to accelerate AI and secure a competitive edge.</p>
+                    
+                    <!-- Navigasyon Noktaları -->
+                    <div class="nav-dots">
+                        <span class="dot active" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                        <span class="dot" data-slide="3"></span>
+                    </div>
+                    
+                    <div class="slide-buttons">
+                        <button class="login-btn" onclick="window.location.href='dashboard.html'">Log In</button>
+                        <button class="signup-btn">Sign Up</button>
+                        <button class="skip-btn" onclick="window.location.href='kur.html'">Skip</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slayt 2: Tradeoffs -->
+            <div class="slide" id="slide-2">
+                <div class="slide-content">
+                    <h1 class="slide-title">Tradeoffs</h1>
+                    
+                    <div class="slide-illustration">
+                        <div class="padlock-container">
+                            <div class="padlock">
+                                <div class="lock-body"></div>
+                                <div class="lock-keyhole"></div>
+                            </div>
+                            <div class="ripples">
+                                <div class="ripple outer"></div>
+                                <div class="ripple middle"></div>
+                                <div class="ripple inner"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p class="slide-description">Weigh risks, take steps, and drive AI innovation strategically.</p>
+                    
+                    <!-- Navigasyon Noktaları -->
+                    <div class="nav-dots">
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot active" data-slide="2"></span>
+                        <span class="dot" data-slide="3"></span>
+                    </div>
+                    
+                    <div class="slide-buttons">
+                        <button class="login-btn" onclick="window.location.href='dashboard.html'">Log In</button>
+                        <button class="signup-btn">Sign Up</button>
+                        <button class="skip-btn" onclick="window.location.href='kur.html'">Skip</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slayt 3: Risk Averse -->
+            <div class="slide" id="slide-3">
+                <div class="slide-content">
+                    <h1 class="slide-title">Risk Averse</h1>
+                    
+                    <div class="slide-illustration">
+                        <div class="shield-averse-container">
+                            <div class="shield-averse">
+                                <div class="shield-side"></div>
+                                <div class="data-blocks">
+                                    <div class="block"></div>
+                                    <div class="block"></div>
+                                    <div class="block"></div>
+                                    <div class="block"></div>
+                                    <div class="block"></div>
+                                    <div class="block"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p class="slide-description">Significantly <strong>reduce risk</strong> through compliance and careful use of AI.</p>
+                    
+                    <!-- Navigasyon Noktaları -->
+                    <div class="nav-dots">
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                        <span class="dot active" data-slide="3"></span>
+                    </div>
+                    
+                    <div class="slide-buttons">
+                        <button class="login-btn" onclick="window.location.href='dashboard.html'">Log In</button>
+                        <button class="signup-btn">Sign Up</button>
+                        <button class="skip-btn" onclick="window.location.href='kur.html'">Skip</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Slayt geçiş fonksiyonu
+        function showSlide(slideNumber) {
+            // Tüm slaytları gizle
+            document.querySelectorAll('.slide').forEach(slide => {
+                slide.classList.remove('active');
+            });
+            
+            // Tüm dots'ları pasif yap
+            document.querySelectorAll('.dot').forEach(dot => {
+                dot.classList.remove('active');
+            });
+            
+            // Seçili slaytı göster
+            document.getElementById('slide-' + slideNumber).classList.add('active');
+            document.querySelector('[data-slide="' + slideNumber + '"]').classList.add('active');
+        }
+
+        // Dot'lara tıklama olayı
+        document.querySelectorAll('.dot').forEach(dot => {
+            dot.addEventListener('click', function() {
+                const slideNumber = this.getAttribute('data-slide');
+                showSlide(slideNumber);
+            });
+        });
+
+        // Otomatik slayt geçişi (3 saniyede bir)
+        let currentSlide = 1;
+        setInterval(() => {
+            currentSlide = currentSlide % 3 + 1;
+            showSlide(currentSlide);
+        }, 3000);
+    </script>
+</body>
+</html> 

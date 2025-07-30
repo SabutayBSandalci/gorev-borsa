@@ -1,0 +1,1330 @@
+/* Reset ve Genel Stiller */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    line-height: 1.6;
+}
+
+/* ===== GİRİŞ SAYFASI ===== */
+.login-body {
+    background: #fff;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr;
+    position: relative;
+}
+
+/* Slides Container */
+.slides-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: grid;
+    place-items: center;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+
+
+.skip-btn {
+    background: #fff;
+    color: #666;
+    border: 2px solid #000;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.skip-btn:hover {
+    background: #f8f8f8;
+    color: #000;
+}
+
+.slide-content {
+    text-align: center;
+    padding: 20px;
+    display: grid;
+    grid-template-rows: auto auto auto auto auto;
+    gap: 25px;
+    height: 100%;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.slide-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.slide-illustration {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+    display: grid;
+    place-items: center;
+}
+
+/* Slayt 1 Görselleri */
+.shield-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.shield {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+}
+
+.shield-rings {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.ring {
+    position: absolute;
+    border: 2px solid #000;
+    border-radius: 50%;
+}
+
+.ring.outer {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.ring.middle {
+    width: 70%;
+    height: 70%;
+    top: 15%;
+    left: 15%;
+}
+
+.ring.inner {
+    width: 40%;
+    height: 40%;
+    top: 30%;
+    left: 30%;
+    background: #ffb3d9;
+}
+
+.shield-center {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #000;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sword {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 120px;
+}
+
+.sword-blade {
+    width: 8px;
+    height: 80px;
+    background: #c0c0c0;
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.sword-hilt {
+    width: 20px;
+    height: 40px;
+    background: #ffd700;
+    margin: 0 auto;
+    border-radius: 4px;
+}
+
+.coins {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+}
+
+.coin {
+    width: 30px;
+    height: 30px;
+    background: #ffd700;
+    border: 2px solid #000;
+    border-radius: 50%;
+    position: relative;
+}
+
+.coin::after {
+    content: '$';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    color: #000;
+}
+
+/* Slide 2 Illustrations */
+.padlock-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.padlock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 80px;
+}
+
+.lock-body {
+    width: 100%;
+    height: 60px;
+    border: 3px solid #000;
+    border-radius: 8px 8px 0 0;
+    position: relative;
+}
+
+.lock-keyhole {
+    width: 20px;
+    height: 20px;
+    background: #90ee90;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ripples {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ripple {
+    position: absolute;
+    border: 2px solid #000;
+    border-radius: 50%;
+}
+
+.ripple.outer {
+    width: 120px;
+    height: 120px;
+    top: -60px;
+    left: -60px;
+}
+
+.ripple.middle {
+    width: 80px;
+    height: 80px;
+    top: -40px;
+    left: -40px;
+}
+
+.ripple.inner {
+    width: 40px;
+    height: 40px;
+    top: -20px;
+    left: -20px;
+    background: #90ee90;
+}
+
+/* Slide 3 Illustrations */
+.shield-averse-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.shield-averse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 120px;
+}
+
+.shield-side {
+    width: 100%;
+    height: 100%;
+    border: 3px solid #000;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    background: linear-gradient(to right, transparent 50%, #ffa500 50%);
+}
+
+.data-blocks {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+}
+
+.block {
+    width: 15px;
+    height: 15px;
+    border: 2px solid #000;
+    background: #fff;
+}
+
+.slide-description {
+    font-size: 16px;
+    color: #000;
+    line-height: 1.6;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+.slide-buttons {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.login-btn {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+    background: #333;
+}
+
+.signup-btn {
+    background: #fff;
+    color: #666;
+    border: 2px solid #000;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.signup-btn:hover {
+    background: #f8f8f8;
+    color: #000;
+}
+
+/* Navigation Dots */
+.nav-dots {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-items: center;
+    padding: 10px 0;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background: #000;
+}
+
+/* Sayfa Navigasyonu */
+.page-navigation {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+.page-navigation a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 10px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.page-navigation a:hover {
+    background: #f0f0f0;
+}
+
+/* ===== KUR SAYFASI ===== */
+.kur-body {
+    background: #1a1a1a;
+    min-height: 100vh;
+    color: white;
+    padding: 40px 20px;
+}
+
+.kur-container {
+    max-width: 400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    gap: 30px;
+}
+
+/* Balance Display */
+.balance-display {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.currency-value {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: baseline;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.dollar-sign {
+    font-size: 48px;
+    font-weight: 700;
+    color: white;
+}
+
+.main-value {
+    font-size: 48px;
+    font-weight: 700;
+    color: white;
+}
+
+.decimal-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #999;
+}
+
+.currency-types {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    align-items: center;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.currency-type {
+    font-size: 16px;
+    font-weight: 600;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.currency-type.active {
+    color: white;
+}
+
+/* Action Buttons Grid */
+.action-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.action-card {
+    background: #2d2d2d;
+    border-radius: 15px;
+    padding: 30px 20px;
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 15px;
+    align-items: center;
+    justify-items: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.action-card:hover {
+    transform: translateY(-5px);
+}
+
+.action-card i {
+    font-size: 32px;
+    color: #ffd700;
+}
+
+.action-card span {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+}
+
+.currency-value {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: baseline;
+    justify-content: center;
+    gap: 5px;
+}
+
+.dollar-sign {
+    font-size: 48px;
+    font-weight: 700;
+    color: white;
+}
+
+.main-value {
+    font-size: 48px;
+    font-weight: 700;
+    color: white;
+}
+
+.decimal-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #999;
+}
+
+/* Transaction History */
+.transaction-history {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 20px;
+}
+
+.transaction-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: #2d2d2d;
+    border-radius: 15px;
+}
+
+.transaction-left {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 15px;
+}
+
+.company-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.company-logo.nvidia {
+    background: #76b900;
+    color: white;
+}
+
+.company-logo.tesla {
+    background: #e31937;
+    color: white;
+}
+
+.transaction-info {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 5px;
+}
+
+.company-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+}
+
+.transaction-date {
+    font-size: 14px;
+    color: #999;
+}
+
+.transaction-right {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 5px;
+    text-align: right;
+}
+
+.transaction-amount {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+}
+
+.transaction-quantity {
+    font-size: 14px;
+    color: #999;
+}
+
+/* Kur sayfası için navigation */
+.kur-body .page-navigation {
+    margin-top: 40px;
+}
+
+.kur-body .page-navigation a {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.kur-body .page-navigation a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* ===== DASHBOARD SAYFASI ===== */
+.dashboard-body {
+    background: #1a1a1a;
+    min-height: 100vh;
+    color: white;
+    padding: 40px 20px;
+}
+
+.dashboard-container {
+    max-width: 400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    gap: 30px;
+}
+
+/* Balance Display */
+.balance-display {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.currency-value {
+    font-size: 48px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.dollar-sign {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.main-value {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.decimal-value {
+    font-size: 32px;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+.currency-types {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.currency-type {
+    font-size: 16px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.currency-type.active {
+    color: white;
+    font-weight: 600;
+}
+
+/* Action Buttons Grid */
+.action-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.action-card {
+    background: #2d2d2d;
+    border-radius: 15px;
+    padding: 30px 20px;
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 15px;
+    align-items: center;
+    justify-items: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.action-card:hover {
+    transform: translateY(-5px);
+}
+
+.action-card i {
+    font-size: 32px;
+    color: #ffd700;
+}
+
+.action-card span {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+}
+
+/* Transaction History */
+.transaction-history {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 20px;
+}
+
+.transaction-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: #2d2d2d;
+    border-radius: 15px;
+}
+
+.transaction-left {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 15px;
+}
+
+.company-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.company-logo.nvidia {
+    background: #76b900;
+    color: white;
+}
+
+.company-logo.tesla {
+    background: #e31937;
+    color: white;
+}
+
+.transaction-info {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 5px;
+}
+
+.company-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+}
+
+.transaction-date {
+    font-size: 14px;
+    color: #999;
+}
+
+.transaction-right {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 5px;
+    text-align: right;
+}
+
+.transaction-amount {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+}
+
+.transaction-quantity {
+    font-size: 14px;
+    color: #999;
+}
+
+/* Dashboard sayfası için navigation */
+.dashboard-body .page-navigation {
+    margin-top: 40px;
+}
+
+.dashboard-body .page-navigation a {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.dashboard-body .page-navigation a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Dashboard Responsive */
+@media (max-width: 768px) {
+    .dashboard-container {
+        max-width: 100%;
+        gap: 30px;
+    }
+    
+    .action-buttons {
+        gap: 18px;
+    }
+    
+    .action-card {
+        padding: 25px 18px;
+    }
+    
+    .action-card i {
+        font-size: 28px;
+    }
+    
+    .action-card span {
+        font-size: 15px;
+    }
+    
+    .transaction-item {
+        padding: 18px;
+        gap: 18px;
+    }
+    
+    .company-logo {
+        width: 38px;
+        height: 38px;
+        font-size: 17px;
+    }
+    
+    .company-name {
+        font-size: 17px;
+    }
+    
+    .transaction-amount {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-container {
+        gap: 25px;
+    }
+    
+    .action-buttons {
+        gap: 15px;
+    }
+    
+    .action-card {
+        padding: 20px 15px;
+    }
+    
+    .action-card i {
+        font-size: 24px;
+    }
+    
+    .action-card span {
+        font-size: 14px;
+    }
+    
+    .transaction-item {
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .company-logo {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+    
+    .company-name {
+        font-size: 16px;
+    }
+    
+    .transaction-amount {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 320px) {
+    .dashboard-container {
+        gap: 20px;
+    }
+    
+    .action-buttons {
+        gap: 12px;
+    }
+    
+    .action-card {
+        padding: 15px 12px;
+    }
+    
+    .action-card i {
+        font-size: 20px;
+    }
+    
+    .action-card span {
+        font-size: 12px;
+    }
+    
+    .transaction-item {
+        padding: 12px;
+        gap: 12px;
+    }
+    
+    .company-logo {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+    
+    .company-name {
+        font-size: 14px;
+    }
+    
+    .transaction-amount {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .dashboard-container {
+        max-width: 450px;
+        gap: 40px;
+    }
+    
+    .action-buttons {
+        gap: 25px;
+    }
+    
+    .action-card {
+        padding: 35px 25px;
+    }
+    
+    .action-card i {
+        font-size: 36px;
+    }
+    
+    .action-card span {
+        font-size: 18px;
+    }
+    
+    .transaction-item {
+        padding: 25px;
+        gap: 25px;
+    }
+    
+    .company-logo {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+    
+    .company-name {
+        font-size: 20px;
+    }
+    
+    .transaction-amount {
+        font-size: 20px;
+    }
+}
+
+/* Responsive Tasarım */
+
+/* Tablet (768px ve altı) */
+@media (max-width: 768px) {
+    .login-container {
+        max-width: 100%;
+        padding: 15px;
+    }
+    
+    .slide-content {
+        padding: 20px;
+    }
+    
+    .slide-title {
+        font-size: 30px;
+    }
+    
+    .slide-illustration {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .action-buttons {
+        gap: 18px;
+    }
+    
+    .action-card {
+        padding: 25px 18px;
+    }
+    
+    .action-card i {
+        font-size: 28px;
+    }
+    
+    .action-card span {
+        font-size: 15px;
+    }
+    
+    .transaction-item {
+        padding: 18px;
+        gap: 18px;
+    }
+    
+    .company-logo {
+        width: 38px;
+        height: 38px;
+        font-size: 17px;
+    }
+    
+    .company-name {
+        font-size: 17px;
+    }
+    
+    .transaction-amount {
+        font-size: 17px;
+    }
+    
+    .kur-container {
+        gap: 25px;
+    }
+    
+    .balance-display {
+        padding: 18px 0;
+    }
+    
+    .dollar-sign,
+    .main-value {
+        font-size: 42px;
+    }
+    
+    .decimal-value {
+        font-size: 28px;
+    }
+    
+    .currency-types {
+        gap: 18px;
+        max-width: 280px;
+    }
+    
+    .currency-type {
+        font-size: 15px;
+    }
+}
+
+/* Mobil (480px ve altı) */
+@media (max-width: 480px) {
+    .login-container {
+        max-width: 100%;
+        padding: 10px;
+    }
+    
+    .slide-content {
+        padding: 15px;
+    }
+    
+    .slide-title {
+        font-size: 28px;
+    }
+    
+    .slide-illustration {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .action-buttons {
+        gap: 15px;
+    }
+    
+    .action-card {
+        padding: 20px 15px;
+    }
+    
+    .action-card i {
+        font-size: 24px;
+    }
+    
+    .action-card span {
+        font-size: 14px;
+    }
+    
+    .transaction-item {
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .company-logo {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+    
+    .company-name {
+        font-size: 16px;
+    }
+    
+    .transaction-amount {
+        font-size: 16px;
+    }
+    
+    .kur-container {
+        gap: 20px;
+    }
+    
+    .balance-display {
+        padding: 15px 0;
+    }
+    
+    .dollar-sign,
+    .main-value {
+        font-size: 36px;
+    }
+    
+    .decimal-value {
+        font-size: 24px;
+    }
+    
+    .currency-types {
+        gap: 15px;
+        max-width: 250px;
+    }
+    
+    .currency-type {
+        font-size: 14px;
+    }
+}
+
+/* Küçük Mobil (320px ve altı) */
+@media (max-width: 320px) {
+    .login-container {
+        padding: 8px;
+    }
+    
+    .slide-content {
+        padding: 12px;
+    }
+    
+    .slide-title {
+        font-size: 24px;
+    }
+    
+    .slide-illustration {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .action-buttons {
+        gap: 12px;
+    }
+    
+    .action-card {
+        padding: 15px 12px;
+    }
+    
+    .action-card i {
+        font-size: 20px;
+    }
+    
+    .action-card span {
+        font-size: 12px;
+    }
+    
+    .transaction-item {
+        padding: 12px;
+        gap: 12px;
+    }
+    
+    .company-logo {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+    
+    .company-name {
+        font-size: 14px;
+    }
+    
+    .transaction-amount {
+        font-size: 14px;
+    }
+    
+    .kur-container {
+        gap: 15px;
+    }
+    
+    .balance-display {
+        padding: 12px 0;
+    }
+    
+    .dollar-sign,
+    .main-value {
+        font-size: 28px;
+    }
+    
+    .decimal-value {
+        font-size: 20px;
+    }
+    
+    .currency-types {
+        gap: 12px;
+        max-width: 200px;
+    }
+    
+    .currency-type {
+        font-size: 12px;
+    }
+}
+
+/* Desktop (1024px ve üstü) */
+@media (min-width: 1024px) {
+    .login-container {
+        max-width: 450px;
+    }
+    
+    .slide-content {
+        padding: 30px;
+    }
+    
+    .slide-title {
+        font-size: 40px;
+    }
+    
+    .slide-illustration {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .action-buttons {
+        gap: 25px;
+    }
+    
+    .action-card {
+        padding: 35px 25px;
+    }
+    
+    .action-card i {
+        font-size: 36px;
+    }
+    
+    .action-card span {
+        font-size: 18px;
+    }
+    
+    .transaction-item {
+        padding: 25px;
+        gap: 25px;
+    }
+    
+    .company-logo {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+    
+    .company-name {
+        font-size: 20px;
+    }
+    
+    .transaction-amount {
+        font-size: 20px;
+    }
+    
+    .kur-container {
+        max-width: 450px;
+        gap: 35px;
+    }
+    
+    .balance-display {
+        padding: 25px 0;
+    }
+    
+    .dollar-sign,
+    .main-value {
+        font-size: 56px;
+    }
+    
+    .decimal-value {
+        font-size: 38px;
+    }
+    
+    .currency-types {
+        gap: 25px;
+        max-width: 350px;
+    }
+    
+    .currency-type {
+        font-size: 18px;
+    }
+} 
